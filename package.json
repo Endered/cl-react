@@ -1,0 +1,34 @@
+{
+  "name": "jscl",
+  "version": "0.8.2",
+  "description": "A Common Lisp implementation for Javascript",
+  "main": "jscl.js",
+  "files": [
+    "jscl.js",
+    "jscl-node.js",
+    "jscl-deno.js",
+    "jscl-web.js"
+  ],
+  "bin": {
+    "jscl": "./jscl-node-wrapper.js"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jscl-project/jscl.git"
+  },
+  "keywords": [
+    "lisp",
+    "compiler"
+  ],
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jscl-project/jscl/pulls"
+  },
+  "homepage": "https://github.com/jscl-project/jscl#readme"
+}
