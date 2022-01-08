@@ -27,6 +27,8 @@
 (create-jsx-tag p "p")
 (create-jsx-tag article "article")
 (create-jsx-tag header "header")
+(create-jsx-tag button "button")
+(create-jsx-tag input "input")
 
 (defun react-dom-render (element root-node)
   (#j:ReactDOM:render
@@ -47,3 +49,8 @@
 				       (apply #',func props other))))))
 
 
+
+
+(defun use-state (initial-value)
+  (let ((res (#j:React:useState initial-value)))
+    (cons (oget res "0") (oget res "1"))))

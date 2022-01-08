@@ -112,3 +112,18 @@
       (setf (aref res i) (char-downcase (aref res i)))
       (when (eq #\space (aref res i)) (setf (aref res i) #\_)))
     res))
+
+(defun n-argument (n func)
+  (let* ((vars (loop for i from 1 to n
+		     collect (format nil "v~a" i)))
+	 (vars (list->js-array vars))
+	 (str ((oget vars "join"))))
+    (funcall (#j:eval (format nil "f => (~a) => f(~a)"
+			      str str)) 
+	     func)))
+
+(defun no-argument (func)
+  (n-argument 0 func))
+
+(defun one-argument (func)
+  (n-argument 1 func))
